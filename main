@@ -1,0 +1,320 @@
+class normal:
+    Strength = ('')
+    Ineffective = ('rock', 'steel')
+    NoEffect = ('ghost',)
+    Weakness = ('fighting',)
+    Resistance = ('')
+    Immunity = ('ghost',)
+class fire:
+    Strength = ('grass', 'ice', 'bug', 'steel')
+    Ineffective = ('fire', 'water', 'rock', 'dragon')
+    NoEffect = ('')
+    Weakness = ('water', 'ground', 'rock')
+    Resistance = ('fire', 'grass', 'ice', 'bug', 'steel', 'fairy')
+    Immunity = ('')
+class water:
+    Strength = ('fire', 'ground', 'rock')
+    Ineffective = ('water', 'grass', 'dragon')
+    NoEffect = ('')
+    Weakness = ('electric','grass')
+    Resistance = ('fire','water','ice','steel')
+    Immunity = ('')
+class electric:
+    Strength = ('water','flying')
+    Ineffective = ('electric','grass','dragon')
+    NoEffect = ('ground',)
+    Weakness = ('ground',)
+    Resistance = ('electric','flying','steel')
+    Immunity = ('')
+class grass:
+    Strength = ('water','ground','rock')
+    Ineffective = ('fire','grass','poison','flying','bug','dragon','steel')
+    NoEffect = ('')
+    Weakness = ('fire','ice','poison','flying','bug')
+    Resistance = ('water','electric','grass','ground')
+    Immunity = ('')
+class ice:
+    Strength = ('grass','ground','flying','dragon')
+    Ineffective = ('fire','water','ice','steel')
+    NoEffect = ('')
+    Weakness = ('fire','fighting','rock','steel')
+    Resistance = ('ice',)
+    Immunity = ('')
+class fighting:
+    Strength = ('grass','ground','flying','dragon')
+    Ineffective = ('fire','water','ice','steel')
+    NoEffect = ('')
+    Weakness = ('fire','fighting','rock','steel')
+    Resistance = ('bug','rock','dark')
+    Immunity = ('')
+class poison:
+    Strength = ('grass','fairy')
+    Ineffective = ('poison','ground','rock','ghost')
+    NoEffect = ('steel')
+    Weakness = ('ground','psychic')
+    Resistance = ('grass','fighting','poison','bug','fairy')
+    Immunity = ('')
+class ground:
+    Strength = ('fire','electric','poison','rock','steel')
+    Ineffective = ('grass','bug')
+    NoEffect = ('flying',)
+    Weakness = ('water','grass','ice')
+    Resistance = ('poison','rock')
+    Immunity = ('electric',)
+class flying:
+    Strength = ('grass','fighting','bug')
+    Ineffective = ('electric','rock','steel')
+    NoEffect = ('')
+    Weakness = ('electric','ice','rock')
+    Resistance = ('grass','fighting','bug')
+    Immunity = ('ground',)
+class psychic:
+    Strength = ('fighting','poison')
+    Ineffective = ('psychic','steel')
+    NoEffect = ('dark',)
+    Weakness = ('bug','ghost','dark')
+    Resistance = ('fighting','psychic')
+    Immunity = ('')
+class bug:
+    Strength = ('grass','psychic','dark')
+    Ineffective = ('fire','fighting','poison','flying','ghost','steel','fairy')
+    NoEffect = ('')
+    Weakness = ('fire','flying','rock')
+    Resistance = ('grass','fighting','ground')
+    Immunity = ('')
+class rock:
+    Strength = ('fire','ice','flying','bug')
+    Ineffective = ('fighting','ground','steel')
+    NoEffect = ('')
+    Weakness = ('water','grass','fighting','ground','steel')
+    Resistance = ('normal','fire','poison','flying')
+    Immunity = ('')
+class ghost:
+    Strength = ('psychic','ghost')
+    Ineffective = ('dark',)
+    NoEffect = ('normal',)
+    Weakness = ('ghost','dark')
+    Resistance = ('poison','bug')
+    Immunity = ('normal','fighting')
+class dragon:
+    Strength = ('dragon',)
+    Ineffective = ('steel',)
+    NoEffect = ('fairy',)
+    Weakness = ('ice','dragon','fairy')
+    Resistance = ('fire','water','electric','grass')
+    Immunity = ('')
+class dark:
+    Strength = ('psychic','ghost')
+    Ineffective = ('fighting','dark','fairy')
+    NoEffect = ('')
+    Weakness = ('fighting','bug','fairy')
+    Resistance = ('ghost','dark')
+    Immunity = ('psychic',)
+class steel:
+    Strength = ('ice','rock','fair')
+    Ineffective = ('fire','water','electric','steel')
+    NoEffect = ('')
+    Weakness = ('fire','fighting','ground')
+    Resistance = ('normal','grass','ice','flying','psychic','bug','rock','dragon','steel','fairy')
+    Immunity = ('poison',)
+class fairy:
+    Strength = ('fighting','dragon','dark')
+    Ineffective = ('fire','poison','steel')
+    NoEffect = ('')
+    Weakness = ('poison','steel')
+    Resistance = ('fighting','bug','dark')
+    Immunity = ('dragon',)
+Types = ('normal', 'fire', 'water', 'electric', 'grass', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy','none')
+choice = input('Would you like to check a move or a Pokemon? [m/p] ')
+choices = ('m','p')
+choice = choice.lower()
+while choice not in choices:
+    choice = input('Please only enter the lowercase letter m or p: ')
+    choice = choice.lower()
+if choice == 'm':
+    Type1 = input('Please enter move type: ')
+    Type1 = Type1.lower()
+    while Type1 not in Types:
+        Type1 = input('Please enter valid Pokemon types only: ')
+        Type1 = Type1.lower()
+    if Type1 == 'normal':
+        Type1Class = normal
+    if Type1 == 'fire':
+        Type1Class = fire
+    if Type1 == 'water':
+        Type1Class = water
+    if Type1 == 'electric':
+        Type1Class = electric
+    if Type1 == 'grass':
+        Type1Class = grass
+    if Type1 == 'ice':
+        Type1Class = ice
+    if Type1 == 'fighting':
+        Type1Class = fighting
+    if Type1 == 'poison':
+        Type1Class = poison
+    if Type1 == 'ground':
+        Type1Class = ground
+    if Type1 == 'flying':
+        Type1Class = flying
+    if Type1 == 'psychic':
+        Type1Class = psychic
+    if Type1 == 'bug':
+        Type1Class = bug
+    if Type1 == 'rock':
+        Type1Class = rock
+    if Type1 == 'ghost':
+        Type1Class = ghost
+    if Type1 == 'dragon':
+        Type1Class = dragon
+    if Type1 == 'dark':
+        Type1Class = dark
+    if Type1 == 'steel':
+        Type1Class = steel
+    if Type1 == 'fairy':
+        Type1Class = fairy
+    exit(f'The move is supereffective against {", ".join(Type1Class.Strength)}\nIt is not very effective against {", ".join(Type1Class.Ineffective)}\nIt does not effect {", ".join(Type1Class.NoEffect)}')
+else:
+    pass
+Type1 = input('Enter first type: ')
+Type1 = Type1.lower()
+while Type1 not in Types:
+    Type1 = input('Please only input Pokemon types in all lowercase: ')
+if Type1 == 'normal':
+    Type1Class = normal
+if Type1 == 'fire':
+    Type1Class = fire
+if Type1 == 'water':
+    Type1Class = water
+if Type1 == 'electric':
+    Type1Class = electric
+if Type1 == 'grass':
+    Type1Class = grass
+if Type1 == 'ice':
+    Type1Class = ice
+if Type1 == 'fighting':
+    Type1Class = fighting
+if Type1 == 'poison':
+    Type1Class = poison
+if Type1 == 'ground':
+    Type1Class = ground
+if Type1 == 'flying':
+    Type1Class = flying
+if Type1 == 'psychic':
+    Type1Class = psychic
+if Type1 == 'bug':
+    Type1Class = bug
+if Type1 == 'rock':
+    Type1Class = rock
+if Type1 == 'ghost':
+    Type1Class = ghost
+if Type1 == 'dragon':
+    Type1Class = dragon
+if Type1 == 'dark':
+    Type1Class = dark
+if Type1 == 'steel':
+    Type1Class = steel
+if Type1 == 'fairy':
+    Type1Class = fairy
+Type2 = input('Enter second type or "none": ')
+Type2 = Type2.lower()
+while Type2 not in Types:
+    Type2 = input('Please only input Pokemon types in all lowercase: ')
+if Type2 == 'normal':
+    Type2Class = normal
+if Type2 == 'fire':
+    Type2Class = fire
+if Type2 == 'water':
+    Type2Class = water
+if Type2 == 'electric':
+    Type2Class = electric
+if Type2 == 'grass':
+    Type2Class = grass
+if Type2 == 'ice':
+    Type2Class = ice
+if Type2 == 'fighting':
+    Type2Class = fighting
+if Type2 == 'poison':
+    Type2Class = poison
+if Type2 == 'ground':
+    Type2Class = ground
+if Type2 == 'flying':
+    Type2Class = flying
+if Type2 == 'psychic':
+    Type2Class = psychic
+if Type2 == 'bug':
+    Type2Class = bug
+if Type2 == 'rock':
+    Type2Class = rock
+if Type2 == 'ghost':
+    Type2Class = ghost
+if Type2 == 'dragon':
+    Type2Class = dragon
+if Type2 == 'dark':
+    Type2Class = dark
+if Type2 == 'steel':
+    Type2Class = steel
+if Type2 == 'fairy':
+    Type2Class = fairy
+if Type2 == 'none':
+    print(f'Defending Pokemon is\nWeak to: {", ".join(Type1Class.Weakness)}\nResistant to: {", ".join(Type1Class.Resistance)}\nImmune to: {", ".join(Type1Class.Immunity)}')
+else:
+    Type1W = list(Type1Class.Weakness)
+    Type1R = list(Type1Class.Resistance)
+    Type1I = list(Type1Class.Immunity)
+    Type2W = list(Type2Class.Weakness)
+    Type2R = list(Type2Class.Resistance)
+    Type2I = list(Type2Class.Immunity)
+    DefSW = []
+    DefW = []
+    DefR = []
+    DefSR = []
+    DefI = []
+    for x in Type1I:
+        DefI.append(x)
+    for x in Type2I:
+        DefI.append(x)
+    while len(Type1I) != 0:
+        if Type1I[0] in Type2W:
+            Type2W.remove(Type1I[0])
+        if Type1I[0] in Type2R:
+            Type2R.remove(Type1I[0])
+        Type1I.pop(0)
+    while len(Type2I) != 0:
+        if Type2I[0] in Type1W:
+            Type1W.remove(Type2I[0])
+        if Type2I[0] in Type1R:
+            Type1R.remove(Type2I[0])
+        Type2I.pop(0)
+    while len(Type1W) != 0:
+        if Type1W[0] in Type2W:
+            DefSW.append(Type1W[0])
+            Type2W.remove(Type1W[0])
+            Type1W.pop(0)
+        elif Type1W[0] in Type2R:
+            Type2R.remove(Type1W[0])
+            Type1W.pop(0)
+        else:
+            DefW.append(Type1W[0])
+            Type1W.pop(0)
+    while len(Type1R) != 0:
+        if Type1R[0] in Type2R:
+            DefSR.append(Type1R[0])
+            Type2R.remove(Type1R[0])
+            Type1R.pop(0)
+        elif Type1R[0] in Type2W:
+            Type2W.remove(Type1R[0])
+            Type1R.pop(0)
+        else:
+            DefR.append(Type1R[0])
+            Type1R.pop(0)
+    for x in Type2W:
+        DefW.append(x)
+    for x in Type2R:
+        DefR.append(x)
+    print('The defending pokemon is:')
+    print(f'Very weak to {", ".join(DefSW)}')
+    print(f'Weak to {", ".join(DefW)}')
+    print(f'Resistant to {", ".join(DefR)}')
+    print(f'Very resistant to {", ".join(DefSR)}')
+    print(f'Immune to {", ".join(DefI)}')
